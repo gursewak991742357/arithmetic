@@ -5,32 +5,27 @@
  */
 package arithmetic;
 
-
-import java.util.Scanner;
-import static java.time.Clock.system;
-
 /** This class calls the method to perform 
  * arithmetic operations based on user input
- * execute the code check the output
- * @author sivagamasrinivasan
- * 
+ * execute the code and check the output
+ * @author 
  */
-public class Arithmetic 
-{
+public class Arithmetic {
+    public static void main(String[] args) {
+        ArithmeticBase r = new ArithmeticBase();
+        double n = 10.0;
+        double m = 5.0;
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) 
-    {
-       
-        ArithmeticBase r= new ArithmeticBase();
-        Scanner in= new Scanner(System.in);
-        int n= in.nextInt();
-        int m= in.nextInt();
-        double result = r.calculate(m,n);
-        System.out.println("result :" +result); 
-    
+        // Perform all operations
+        double resultAdd = r.calculate(n, m, Operation.PLUS);
+        double resultSubtract = r.calculate(n, m, Operation.MINUS);
+        double resultMultiply = r.calculate(n, m, Operation.TIMES);
+        double resultDivide = r.calculate(n, m, Operation.DIVIDE);
+
+        // Print results
+        System.out.println("Addition Result: " + resultAdd);
+        System.out.println("Subtraction Result: " + resultSubtract);
+        System.out.println("Multiplication Result: " + resultMultiply);
+        System.out.println("Division Result: " + resultDivide);
     }
 }
-
